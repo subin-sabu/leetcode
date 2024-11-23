@@ -26,3 +26,16 @@ for (let current = 0; current < 10; current++) {
   console.log(`current ${current} + previous ${previous} = sum ${sum}`);
   previous = current;
 }
+
+
+/* Q3. merge two arrays, taking odd numbers from arr1 and even numbers from arr2 to form a third array  */
+
+const arr1 = [1, 2, 3, 4, 5];
+const arr2 = [6, 7, 8, 9, 10];
+
+const oddFromArr1 = arr1.filter(e => e % 2 !== 0);
+const evenFromArr2 = arr2.filter(e => e % 2 === 0);
+
+const newArr = [...oddFromArr1, ...evenFromArr2];
+
+console.log(newArr);
