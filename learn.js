@@ -60,7 +60,7 @@ function findPairs(array, target) {
 
 const arr = [2, 4, 3, 6, 8, -1, 7];
 const target = 7;
-console.log('Result: ', findPairs(arr, target));
+//console.log('Result: ', findPairs(arr, target));
 
 /* Qn5. find the number of occurrences of a substring in a string */
 
@@ -69,6 +69,36 @@ const searchStr = "Emma";
 
 let occurances = (str.match(new RegExp(searchStr, "g")) || []).length;
 
-console.log(`${searchStr} appeared ${occurances} times. `);
+//console.log(`${searchStr} appeared ${occurances} times. `);
+
+////////////////////////////////////////////////////
+
+
+/* Qn6. Write a JavaScript program that extracts words from a given string which contain both alphabets and numbers.
+
+Input:
+A string of words separated by spaces.
+Example: "Emma25 is Data scientist50 and AI Expert"
+
+Expected Output:
+An array of words that contain both alphabets and numbers.
+Example: ["Emma25", "scientist50"]       */
+
+
+function getMixStrings(input) {
+  // split input by space
+  const words = input.split(" ");
+  // use regex to find if any word contains both letters and numbers
+  const mixStrings = words.filter(word => /[a-zA-Z]/.test(word) && /\d/.test(word));
+
+  return mixStrings;
+}
+
+const ogString = "Emma25 is Data scientist50 and AI Expert";
+const wordsWithNos = getMixStrings(ogString);
+
+console.log("These are words with numbers in them: ", wordsWithNos);
+
+
 
 
