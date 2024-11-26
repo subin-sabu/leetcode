@@ -97,8 +97,31 @@ function getMixStrings(input) {
 const ogString = "Emma25 is Data scientist50 and AI Expert";
 const wordsWithNos = getMixStrings(ogString);
 
-console.log("These are words with numbers in them: ", wordsWithNos);
+//console.log("These are words with numbers in them: ", wordsWithNos);
 
+///////////////////////////////////////////////
 
+/* Qn7. array=[4,3,8,12,7,6,9,11,5]
+Find the largest,second largest and third largest elements in the array    */
 
+let inputArray = [4,3,8,12,7,6,9,11,5];
+
+let largest = 0; 
+let secondLargest = 0; 
+let thirdLargest = 0;
+
+for (let i = 0; i < inputArray.length; i++) {
+  if (inputArray[i] >= largest) {
+    thirdLargest = secondLargest;
+    secondLargest = largest;
+    largest = inputArray[i];
+  } else if (inputArray[i] >= secondLargest) {
+    thirdLargest = secondLargest;
+    secondLargest = inputArray[i];
+  } else if (inputArray[i] >= thirdLargest){
+    thirdLargest = inputArray[i];
+  }
+}
+
+console.log(`largest: ${largest}, second largest: ${secondLargest}, third largest: ${thirdLargest}`);
 
