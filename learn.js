@@ -123,5 +123,74 @@ for (let i = 0; i < inputArray.length; i++) {
   }
 }
 
-console.log(`largest: ${largest}, second largest: ${secondLargest}, third largest: ${thirdLargest}`);
+//console.log(`largest: ${largest}, second largest: ${secondLargest}, third largest: ${thirdLargest}`);
+
+//////////////////////////////////////////////
+
+/* Qn8. count the frequency of each character in a string */
+function countCharFrequency (str) {
+  const frequency = {};
+
+  for (const char of str) {
+    if (frequency[char]) {
+      frequency[char]++;
+    } else {
+      frequency[char] = 1;
+    }
+  }
+  return frequency;
+}
+
+const ans = countCharFrequency("banana");
+console.log(ans);
+
+////////////////////////////////////////
+
+/* Qn9. String Rotation
+Write a function to check if one string is a rotation of another.
+Example: "abcd" and "dabc" → True */
+
+function isRotation(str1, str2) {
+  // check if length === same
+  if (str1.length !== str2.length) return false;
+  
+  // concatenate str1 with itself
+  const concatStr = str1 + str1;
+
+  //check if str2 is a substring of concatStr
+  return concatStr.includes(str2);
+}
+
+console.log(isRotation("abcd", "dabc"));
+
+
+/////////////////////////////////////////////
+
+
+/* Qn10. First Non-Repeating Character
+Find the first non-repeating character in a string.
+Example: "swiss" → "w"   */
+
+function getFirstNonRepChar(str) {
+  const frequency = {};
+
+  // count frequency of each char
+  for (const char of str) {
+    frequency[char] = (frequency[char] || 0) + 1;
+  }
+
+  // find first char of frequency one
+  for (const char of str) {
+    if (frequency[char] === 1) {
+      return char;
+    }
+  }
+  // return null if no unique chars found
+  return null;
+}
+
+console.log(getFirstNonRepChar("swiss"));
+
+
+
 
