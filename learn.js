@@ -142,7 +142,7 @@ function countCharFrequency (str) {
 }
 
 const ans = countCharFrequency("banana");
-console.log(ans);
+//console.log(ans);
 
 ////////////////////////////////////////
 
@@ -161,7 +161,7 @@ function isRotation(str1, str2) {
   return concatStr.includes(str2);
 }
 
-console.log(isRotation("abcd", "dabc"));
+//console.log(isRotation("abcd", "dabc"));
 
 
 /////////////////////////////////////////////
@@ -189,8 +189,19 @@ function getFirstNonRepChar(str) {
   return null;
 }
 
-console.log(getFirstNonRepChar("swiss"));
+//console.log(getFirstNonRepChar("swiss"));
+
+//////////////////////////////////////////
 
 
+/* Qn11. Remove Duplicates
+Remove duplicate characters from a string.
+Example: "programming" → "progamin"    */
 
+function removeDuplicates(str) {
+  return [...new Set(str)].join('');
+}
+
+const srcStr = 'programming';
+console.log('The unique elements are: ', removeDuplicates(srcStr));
 
