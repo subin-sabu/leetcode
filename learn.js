@@ -203,5 +203,60 @@ function removeDuplicates(str) {
 }
 
 const srcStr = 'programming';
-console.log('The unique elements are: ', removeDuplicates(srcStr));
+//console.log('The unique elements are: ', removeDuplicates(srcStr));
+
+const indexArr = []
+srcStr.split('').forEach((doc, index)=>{
+  indexArr.push(doc, index)
+})
+
+//console.log(indexArr.join(''))
+let a = [1, 2,3 ];
+let b = [1, 2,3 ];
+
+
+//console.log("comparison:", JSON.stringify([1, 2,3 ])== JSON.stringify([1, 2,3 ]))
+
+/* Qn13. Write a function to reverse an array. */
+
+let arrayToBeReversed = [1, 2, 3, 4, 5];
+
+function reverseArray(array) {
+  // two pointer technique
+  let left = 0;
+  let right = array.length - 1;
+  while (left < right) {
+    let temp = array[left]; 
+    array[left] = array[right];
+    array[right] = temp;
+
+    // increment left and decrement right
+    left++;
+    right--;
+  }
+  return array;
+}
+
+console.log(reverseArray(arrayToBeReversed));
+
+
+/* Qn14.  How do you find the maximum and minimum elements in an array?
+*/
+
+const minMaxArray = [12, 5, 18, 3, 9, 10];
+const max = Math.max(...minMaxArray);
+const min = Math.min(...minMaxArray);
+
+console.log(`Max value: ${max} and Min value: ${min}`);
+
+/* Qn15. Write a program to check if two arrays are equal. */
+
+const identicalArray1 = [1, 2, 3];
+const identicalArray2 = [1, 2, 3];
+
+function areArraysEqual(arr1, arr2) {
+  return JSON.stringify(arr1) === JSON.stringify(arr2);
+}
+
+console.log(areArraysEqual(identicalArray1, identicalArray2));
 
