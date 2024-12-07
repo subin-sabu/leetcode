@@ -237,7 +237,7 @@ function reverseArray(array) {
   return array;
 }
 
-console.log(reverseArray(arrayToBeReversed));
+//console.log(reverseArray(arrayToBeReversed));
 
 
 /* Qn14.  How do you find the maximum and minimum elements in an array?
@@ -247,7 +247,7 @@ const minMaxArray = [12, 5, 18, 3, 9, 10];
 const max = Math.max(...minMaxArray);
 const min = Math.min(...minMaxArray);
 
-console.log(`Max value: ${max} and Min value: ${min}`);
+//console.log(`Max value: ${max} and Min value: ${min}`);
 
 /* Qn15. Write a program to check if two arrays are equal. */
 
@@ -258,5 +258,56 @@ function areArraysEqual(arr1, arr2) {
   return JSON.stringify(arr1) === JSON.stringify(arr2);
 }
 
-console.log(areArraysEqual(identicalArray1, identicalArray2));
+//console.log(areArraysEqual(identicalArray1, identicalArray2));
+// global.name = 'Subin';
+// function print() {console.log(this.name);}
 
+// global.name = 'Sai'
+// print()
+
+// console.log(this.name);
+
+
+let hello = {name: 'Unni', log: function(age, place){console.log(`${this.name} (${this.age}) has left for ${place}`)}}
+
+let obj1 = {name: 'Kuttan', age: 48}
+let obj2 = {name: 'Pottan'}
+// hello.log(); // Unni
+
+//hello.log.apply(obj2, [34, "Hell"]);
+
+//hello.log.call(obj1, 35, "Heaven");
+
+/* Qn16. Function to write the sum of two numbers. */
+
+function getSum(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    console.log("Enter valid numbers");
+    return null;
+  }
+  return a + b;
+}
+
+//console.log(getSum(7, 5))
+
+/* Qn17. How do you find the missing number in an array of size n containing numbers from 1 to n+1?
+*/
+
+function findMissingNumber(arr) {
+  // get n
+  const n = arr.length;
+
+  // calculate sum of numbers from 1 to n+1
+  const expectedSum = ((n + 1) * (n + 2)) / 2;
+
+  // calculate sum of current elements in arr
+  const currentSum = arr.reduce((sum, num) => sum + num, 0);
+
+  // Find difference and you"ll have the missing number
+  return expectedSum - currentSum; 
+}
+
+const missingNumArray = [1, 2, 3, 5, 6];
+
+ console.log("Missing Number is:",
+   findMissingNumber(missingNumArray)); 
