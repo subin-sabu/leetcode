@@ -309,5 +309,22 @@ function findMissingNumber(arr) {
 
 const missingNumArray = [1, 2, 3, 5, 6];
 
- console.log("Missing Number is:",
-   findMissingNumber(missingNumArray)); 
+ //console.log("Missing Number is:", findMissingNumber(missingNumArray)); 
+
+////////////////////////////////////////////
+
+/* 
+Qn18. Find the intersection of two arrays
+*/
+
+function findIntersection(arr1, arr2) {
+  // Use filter to retain only common elements
+  return arr1.filter(element => arr2.includes(element));
+}
+
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [4, 5, 6, 7, 8];
+const intersection = findIntersection(array1, array2);
+
+console.log("Intersection:", intersection); // [4, 5]
+
