@@ -15,7 +15,7 @@ public class hello {
         int[] arr1 = {1, 2, 3};
         int[] arr2 = {1, 2, 3};
 
-        // Compare array references (will print false)
+        // Compare array references (will print false, memory location)
         System.out.println(arr1 == arr2);
 
         // Compare array content (will print true)
