@@ -328,3 +328,31 @@ const intersection = findIntersection(array1, array2);
 
 console.log("Intersection:", intersection); // [4, 5]
 
+
+////////////////////////////////////////////
+
+
+/* Different ways to create an object in JavaScript? */
+
+//Object literals
+const obj1 = { key: "value" };
+
+// Constructor function
+function Person(name) {
+  this.name = name;
+}
+const obj2 = new Person("Alice");
+
+//Object.create method
+const obj3 = Object.create({ key: "value" });
+
+//“new Object()” syntax
+const obj4 = new Object();
+
+//ES6 “class” syntax
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+}
+const obj5 = new Animal("Dog");
