@@ -356,3 +356,16 @@ class Animal {
   }
 }
 const obj5 = new Animal("Dog");
+
+/////////////////////////////////////////////////
+
+/* String to title case */ 
+function toTitleCase(str) {
+    const regex = /\b\w/g
+    return str.replace(regex, e => e.toUpperCase())
+}
+
+//console.log(toTitleCase('hello, this is #good AND *3clean'))
+
+//////////////////////////////////////////////////
+
