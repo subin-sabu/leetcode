@@ -369,3 +369,6 @@ function toTitleCase(str) {
 
 //////////////////////////////////////////////////
 
+/* Type of NaN */
+
+// console.log(typeof NaN) // Number 
