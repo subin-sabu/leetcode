@@ -372,3 +372,21 @@ function toTitleCase(str) {
 /* Type of NaN */
 
 // console.log(typeof NaN) // Number 
+
+///////////////////////////////////////////////////
+/* Temporal Dead Zone, Hoisting */ 
+// A code that works
+const App = () => MyVideo()
+const MyVideo = () => 10;
+console.log(App())
+
+// A code that gives ReferenceError
+const App1 = () => MyVideo()
+console.log(App1()) // during parsing, MyVideo1 is not initialized, it stays in TDz along with App1
+const MyVideo1 = () => 10;
+
+// A code that gives TypeError
+const App2 = () => MyVideo()
+console.log(App2()) // during parsing, MyVideo2 is assigned 'undefined'
+var MyVideo2 = () => 10;
+
